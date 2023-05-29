@@ -187,6 +187,10 @@ public class RegistryClient {
         registry.put(key, value, true);
     }
 
+    public void persistPermanent(String key, String value) {
+        registry.put(key, value, false);
+    }
+
     public void remove(String key) {
         registry.delete(key);
     }
