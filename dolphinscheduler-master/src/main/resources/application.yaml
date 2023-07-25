@@ -32,10 +32,10 @@ spring:
     caffeine:
       spec: maximumSize=100,expireAfterWrite=300s,recordStats
   datasource:
-    driver-class-name: org.postgresql.Driver
-    url: jdbc:postgresql://127.0.0.1:5432/dolphinscheduler
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://127.0.0.1:3303/dolphinscheduler3?useUnicode=true&characterEncoding=UTF-8
     username: root
-    password: root
+    password: 123456
     hikari:
       connection-test-query: select 1
       minimum-idle: 5
@@ -72,7 +72,7 @@ spring:
 registry:
   type: zookeeper
   zookeeper:
-    namespace: dolphinscheduler
+    namespace: dolphinscheduler3
     connect-string: localhost:2181
     retry-policy:
       base-sleep-time: 60ms
@@ -105,7 +105,7 @@ master:
   # master max cpuload avg percentage, only higher than the system cpu load average, master server can schedule. default value 1: will use 100% cpu
   max-cpu-load-avg: 1
   # master reserved memory, only lower than system available memory, master server can schedule. default value 0.3, only the available memory is higher than 30%, master server can schedule.
-  reserved-memory: 0.3
+  reserved-memory: 0.1
   # failover interval, the unit is minute
   failover-interval: 10m
   # kill yarn / k8s application when failover taskInstance, default true
@@ -150,9 +150,9 @@ spring:
       on-profile: mysql
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver
-    url: jdbc:mysql://127.0.0.1:3306/dolphinscheduler
+    url: jdbc:mysql://127.0.0.1:3303/dolphinscheduler3?useUnicode=true&characterEncoding=UTF-8
     username: root
-    password: root
+    password: 123456
   quartz:
     properties:
       org.quartz.jobStore.driverDelegateClass: org.quartz.impl.jdbcjobstore.StdJDBCDelegate

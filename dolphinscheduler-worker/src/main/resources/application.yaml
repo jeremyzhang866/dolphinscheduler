@@ -24,7 +24,7 @@ spring:
 registry:
   type: zookeeper
   zookeeper:
-    namespace: dolphinscheduler
+    namespace: dolphinscheduler3
     connect-string: localhost:2181
     retry-policy:
       base-sleep-time: 60ms
@@ -51,7 +51,7 @@ worker:
   # worker max cpuload avg, only higher than the system cpu load average, worker server can be dispatched tasks. default value 1: will use 100% cpu.
   max-cpu-load-avg: 1
   # worker reserved memory, only lower than system available memory, worker server can be dispatched tasks. default value 0.3, only the available memory is higher than 30%, worker server can receive task.
-  reserved-memory: 0.3
+  reserved-memory: 0.1
   registry-disconnect-strategy:
     # The disconnect strategy: stop, waiting
     strategy: waiting

@@ -708,9 +708,9 @@ public class PythonGateway {
                 serverBuilder.authToken(pythonGatewayConfiguration.getAuthToken());
             }
 
-            GatewayServer.turnLoggingOn();
+//            GatewayServer.turnLoggingOn();
             log.info("PythonGatewayService started on: " + gatewayHost.toString());
-            serverBuilder.build().start();
+//            serverBuilder.build().start();
         } catch (UnknownHostException e) {
             log.error("exception occurred while constructing PythonGatewayService().", e);
         }

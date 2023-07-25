@@ -110,7 +110,7 @@ public abstract class WorkerTaskExecuteRunnable implements Runnable {
 
         TaskExecutionContextCacheManager.removeByTaskInstanceId(taskExecutionContext.getTaskInstanceId());
         log.info("Remove the current task execute context from worker cache");
-        clearTaskExecPathIfNeeded();
+//        clearTaskExecPathIfNeeded();
 
     }
 
