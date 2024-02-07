@@ -98,10 +98,10 @@ public class WorkerHeartBeatTask extends BaseHeartBeatTask<WorkerHeartBeat> {
                                          int workerExecThreadCount,
                                          int workerWaitingTaskCount) {
         if (cpuUsagePercentage > maxCpuUsePercentage || (1 - memoryUsagePercentage) < reservedMemory) {
-            log.warn(
-                    "current cpu load average {} is higher than {} or available memory {} is lower than {}",
-                    cpuUsagePercentage, maxCpuUsePercentage, 1 - memoryUsagePercentage, reservedMemory);
-            return ServerStatus.ABNORMAL;
+//            log.warn(
+//                    "current cpu load average {} is higher than {} or available memory {} is lower than {}",
+//                    cpuUsagePercentage, maxCpuUsePercentage, 1 - memoryUsagePercentage, reservedMemory);
+            return ServerStatus.NORMAL;
         } else if (workerWaitingTaskCount > workerExecThreadCount) {
             log.warn("current waiting task count {} is large than worker thread count {}, worker is busy",
                     workerWaitingTaskCount, workerExecThreadCount);

@@ -465,9 +465,9 @@ public class OSUtils {
         }
 
         if (freeMemoryPercentage < reservedMemoryThreshold) {
-            log.warn(
-                    "Current available memory percentage{} is too low, reserved.memory={}", freeMemoryPercentage,
-                    reservedMemoryThreshold);
+//            log.warn(
+//                    "Current available memory percentage{} is too low, reserved.memory={}", freeMemoryPercentage,
+//                    reservedMemoryThreshold);
             return true;
         }
         return false;

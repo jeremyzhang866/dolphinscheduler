@@ -117,7 +117,7 @@ public class MasterSchedulerBootstrap extends BaseDaemonThread implements AutoCl
                 // todo: if the workflow event queue is much, we need to handle the back pressure
                 boolean isOverload =
                         OSUtils.isOverload(masterConfig.getMaxCpuLoadAvg(), masterConfig.getReservedMemory());
-                if (isOverload) {
+                if (false) {
                     log.warn("The current server is overload, cannot consumes commands.");
                     MasterServerMetrics.incMasterOverload();
                     Thread.sleep(Constants.SLEEP_TIME_MILLIS);
@@ -173,10 +173,10 @@ public class MasterSchedulerBootstrap extends BaseDaemonThread implements AutoCl
             long scheduleStartTime = System.currentTimeMillis();
             int thisMasterSlot = masterSlotManager.getSlot();
             int masterCount = masterSlotManager.getMasterSize();
-            if (masterCount <= 0) {
-                log.warn("Master count: {} is invalid, the current slot: {}", masterCount, thisMasterSlot);
-                return Collections.emptyList();
-            }
+//            if (masterCount <= 0) {
+//                log.warn("Master count: {} is invalid, the current slot: {}", masterCount, thisMasterSlot);
+//                return Collections.emptyList();
+//            }
             int pageSize = masterConfig.getFetchCommandNum();
             final List<Command> result =
                     commandService.findCommandPageBySlot(pageSize, masterCount, thisMasterSlot);
