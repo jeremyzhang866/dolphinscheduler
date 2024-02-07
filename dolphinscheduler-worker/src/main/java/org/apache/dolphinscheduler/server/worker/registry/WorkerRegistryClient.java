@@ -100,7 +100,7 @@ public class WorkerRegistryClient implements AutoCloseable {
         String workerRegistryPath = workerConfig.getWorkerRegistryPath();
         // remove before persist
         registryClient.remove(workerRegistryPath);
-        registryClient.persistEphemeral(workerRegistryPath, JSONUtils.toJsonString(workerHeartBeat));
+        registryClient.persistPermanent(workerRegistryPath, JSONUtils.toJsonString(workerHeartBeat));
         log.info("Worker node: {} registry to registry center {} successfully", workerConfig.getWorkerAddress(),
                 workerRegistryPath);
 
