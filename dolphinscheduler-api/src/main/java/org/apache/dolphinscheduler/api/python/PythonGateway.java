@@ -690,7 +690,7 @@ public class PythonGateway {
     @PostConstruct
     public void init() {
         if (apiConfig.getPythonGateway().isEnabled()) {
-            this.start();
+//            this.start();
         }
     }
 

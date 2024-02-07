@@ -92,7 +92,7 @@ public class WorkerRegistryClient implements AutoCloseable {
         String workerZKPath = workerConfig.getWorkerRegistryPath();
         // remove before persist
         registryClient.remove(workerZKPath);
-        registryClient.persistEphemeral(workerZKPath, JSONUtils.toJsonString(workerHeartBeat));
+        registryClient.persistPermanent(workerZKPath, JSONUtils.toJsonString(workerHeartBeat));
         log.info("Worker node: {} registry to ZK {} successfully", workerConfig.getWorkerAddress(), workerZKPath);
 
         while (!registryClient.checkNodeExists(workerConfig.getWorkerAddress(), RegistryNodeType.WORKER)) {
