@@ -124,7 +124,7 @@ security:
           clientSecret: ""
           tokenUri: "https://github.com/login/oauth/access_token"
           userInfoUri: "https://api.github.com/user"
-          callbackUrl: "http://localhost:5173/login"
+          callbackUrl: "http://localhost:5174/login"
           iconUri: ""
           provider: github
         gitee:
@@ -134,7 +134,7 @@ security:
           clientSecret: ""
           tokenUri: "https://gitee.com/oauth/token?grant_type=authorization_code"
           userInfoUri: "https://gitee.com/api/v5/user"
-          callbackUrl: "http://127.0.0.1:5173/login"
+          callbackUrl: "http://127.0.0.1:5174/login"
           iconUri: ""
           provider: gitee
 
@@ -150,7 +150,7 @@ casdoor:
   # Your application name added in Casdoor
   application-name: dolphinscheduler
   # Doplhinscheduler login url
-  redirect-url: http://localhost:5173/login
+  redirect-url: http://localhost:5174/login
 
 
 

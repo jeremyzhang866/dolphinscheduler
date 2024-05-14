@@ -37,7 +37,7 @@ spring:
 demo:
   tenant-code: default
   domain-name: localhost
-  api-server-port: 5173
+  api-server-port: 5174
 
 # Override by profile
 
