@@ -75,7 +75,7 @@
     </dependencies>
 
     <build>
-        <finalName>apache-dolphinscheduler-${project.version}</finalName>
+        <finalName>apache-dolphinscheduler-${project.version}-2024-08-15</finalName>
     </build>
 
     <profiles>
