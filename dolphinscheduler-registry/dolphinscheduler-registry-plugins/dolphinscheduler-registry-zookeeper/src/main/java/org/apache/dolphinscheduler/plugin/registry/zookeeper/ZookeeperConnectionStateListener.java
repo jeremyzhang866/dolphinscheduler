@@ -44,7 +44,7 @@ final class ZookeeperConnectionStateListener implements ConnectionStateListener 
                 break;
             case LOST:
                 log.warn("Registry disconnected");
-                listener.onUpdate(ConnectionState.DISCONNECTED);
+//                listener.onUpdate(ConnectionState.DISCONNECTED);
                 break;
             case RECONNECTED:
                 log.info("Registry reconnected");
@@ -52,7 +52,7 @@ final class ZookeeperConnectionStateListener implements ConnectionStateListener 
                 break;
             case SUSPENDED:
                 log.warn("Registry suspended");
-                listener.onUpdate(ConnectionState.SUSPENDED);
+//                listener.onUpdate(ConnectionState.SUSPENDED);
                 break;
             default:
                 break;
